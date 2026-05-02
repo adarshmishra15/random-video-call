@@ -3,6 +3,11 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 
+// Polyfill for simple-peer in Vite
+if (typeof global === 'undefined') {
+  window.global = window;
+}
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />
